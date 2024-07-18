@@ -1,0 +1,52 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.9.19",
+    "heartbeatAt": "2024-07-17T20:38:53.707430",
+    "startedAt": "2024-07-17T20:38:51.418823",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "git@github.com:siva1999/llm.git",
+        "commit": "98c986e4493294e84708aecd3f45b4599ec4fa9f"
+    },
+    "email": "puthusiva@gmail.com",
+    "root": "C:/Users/puthu/siva/EPITA/S3/action_learning/llm",
+    "host": "Siva",
+    "username": "puthu",
+    "executable": "c:\\Users\\puthu\\anaconda3\\envs\\fva\\python.exe",
+    "cpu_count": 14,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2300.0,
+        "min": 0.0,
+        "max": 2300.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2300.0,
+            "min": 0.0,
+            "max": 2300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 951.6455039978027,
+            "used": 459.2570381164551
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 15.746784210205078
+    }
+}

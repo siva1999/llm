@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/puthu/siva/EPITA/S3/action_learning/llm/notebook/mlruns/0/bc52b862d4724c0390887fbdfba7fc5f/artifacts
+end_time: 1721254726650
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bc52b862d4724c0390887fbdfba7fc5f
+run_name: ./results
+run_uuid: bc52b862d4724c0390887fbdfba7fc5f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721248539858
+status: 3
+tags: []
+user_id: puthu

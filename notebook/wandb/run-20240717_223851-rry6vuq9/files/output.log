@@ -1,0 +1,10 @@
+
+{'eval_loss': 0.14797264337539673, 'eval_runtime': 373.5232, 'eval_samples_per_second': 2.677, 'eval_steps_per_second': 0.669, 'epoch': 1.0}
+{'loss': 0.861, 'learning_rate': 6.666666666666667e-06, 'epoch': 2.0}
+{'eval_loss': 0.08196964859962463, 'eval_runtime': 325.6256, 'eval_samples_per_second': 3.071, 'eval_steps_per_second': 0.768, 'epoch': 2.0}
+{'eval_loss': 0.06718628108501434, 'eval_runtime': 325.9198, 'eval_samples_per_second': 3.068, 'eval_steps_per_second': 0.767, 'epoch': 3.0}
+{'train_runtime': 6186.7876, 'train_samples_per_second': 0.485, 'train_steps_per_second': 0.121, 'train_loss': 0.6508353678385417, 'epoch': 3.0}
+Story: A hero named John goes on an adventure. Characters: John. Objects: sword. Locations: forest. Professions: knight. Emotions: brave.
+Ensure the history aspects are seamlessly integrated and contribute to the overall happy tone of the story. The story should feature a dog, a sun, and a beach. Additionally, incorporate elements of history to enhance the narrative. Ensure the history aspects are seamlessly integrated and contribute to the overall happy tone of the story.
+Ensure the history aspects are seamlessly integrated and contribute to the overall happy tone of the story. The story should feature a dog, a sun, and a beach. Additionally, incorporate elements of history to enhance the narrative. Ensure the history aspects are seamlessly integrated and contribute to the overall happy tone of the story.
+Story: A dog in a beach. Characters: John. Objects: ball. Locations: beach. Professions: prince. Emotions: happy.
