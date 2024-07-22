@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Story</title>
+</head>
+<body>
+    <h1>Your Generated Story</h1>
+    <div>
+        {% for segment, image in zip(story_segments, images) %}
+            <p>{{ segment }}.</p>
+            <img src="{{ image }}" alt="Story Image" style="width: 100%; height: auto;">
+        {% endfor %}
+    </div>
+</body>
+</html>
