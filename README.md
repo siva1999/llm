@@ -1,7 +1,6 @@
 # Fine Tuning LLM For Story Generation
 
 In this project, I developed a custom dataset derived from an existing dataset using the Spacy NLP model to extract characters, objects, locations, vehicles, professions, and emotions from the stories. 
-I then fine-tuned the Google FLAN-T5 Large (783M parameters) language model using this custom dataset.
 
 Dataset before :
 
@@ -25,3 +24,6 @@ After Fine Tuning :
 ![image](https://github.com/user-attachments/assets/e5eccf53-641a-400b-b877-5a05fad485d2)
 
 
+I then fine-tuned the Google FLAN-T5 Large (783M parameters) language model using this custom dataset.
+
+Fine tuned model is uploaded in the Huggingface : https://huggingface.co/siva1999/flan-t5-story-gen
