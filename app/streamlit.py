@@ -1,6 +1,14 @@
 import streamlit as st
 import requests
 
+# Set the page configuration
+st.set_page_config(
+    page_title="LLM Based Story Generator",  # Title that appears on the tab
+    page_icon="📖",  # Optional: add an icon
+    layout="wide",  # Optional: set the layout
+    initial_sidebar_state="expanded"  # Optional: set the initial sidebar state
+)
+
 st.title("LLM Based Story Generator")
 
 # Sidebar for window selection
