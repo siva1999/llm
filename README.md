@@ -27,3 +27,16 @@ After Fine Tuning :
 I then fine-tuned the Google FLAN-T5 Large (783M parameters) language model using this custom dataset.
 
 Fine tuned model is uploaded in the Huggingface : https://huggingface.co/siva1999/flan-t5-story-gen
+
+
+### Model Sample Output :
+
+
+Simple Generator : https://github.com/siva1999/llm/blob/main/app/streamlit_output_simple.pdf
+
+Advanced Generator : https://github.com/siva1999/llm/blob/main/app/streamlit_output_advanced.pdf
+
+Custom Prompt Generator : https://github.com/siva1999/llm/blob/main/app/streamlit_output_own_prompt.pdf
+
+
+
