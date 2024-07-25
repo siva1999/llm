@@ -15,9 +15,18 @@ pipe = StableDiffusionPipeline.from_pretrained('CompVis/stable-diffusion-v1-4')
 pipe = pipe.to("cuda")
 
 # Load fine-tuned T5 model and tokenizer for story generation
-model_path = '../model/fine-tuned-t5'
-tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_path).to("cuda")
+
+# Load from huggingface
+
+tokenizer = AutoTokenizer.from_pretrained("siva1999/flan-t5-story-gen")
+model = AutoModelForSeq2SeqLM.from_pretrained("siva1999/flan-t5-story-gen")
+
+# Load from a folder
+
+#model_path = '../model/fine-tuned-t5'
+#tokenizer = AutoTokenizer.from_pretrained(model_path)
+#model = AutoModelForSeq2SeqLM.from_pretrained(model_path).to("cuda")
+
 text2text_generator = pipeline('text2text-generation', model=model, tokenizer=tokenizer, device=0)
 
 class StoryRequest(BaseModel):
