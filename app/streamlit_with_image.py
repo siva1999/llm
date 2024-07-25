@@ -1,18 +1,29 @@
 import streamlit as st
 import requests
+import base64
+from io import BytesIO
 
 # Set the page configuration
 st.set_page_config(
-    page_title="LLM Based Story Generator",  # Title that appears on the tab
-    page_icon="📖",  # Optional: add an icon
-    layout="wide",  # Optional: set the layout
-    initial_sidebar_state="expanded"  # Optional: set the initial sidebar state
+    page_title="LLM Based Story Generator",
+    page_icon="📖",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 st.title("LLM Based Story Generator")
 
 # Sidebar for window selection
-window_option = st.sidebar.selectbox("Choose a window", ("Simple Generator", "Advanced Generator", "Create My Own Prompt"))
+window_option = st.sidebar.selectbox("Choose a window", ("Simple Generator", "Advanced Generator", "Create My Own Prompt", "Generate Story Images"))
+
+API_URL_BASE = "http://127.0.0.1:8000"  # Replace with your actual FastAPI base URL
+
+
+
+def generate_download_link(content, filename, content_type):
+    b64 = base64.b64encode(content).decode()
+    href = f'<a href="data:{content_type};base64,{b64}" download="{filename}">Download {filename}</a>'
+    return href
 
 if window_option == "Simple Generator":
     st.header("Simple Generator")
@@ -23,7 +34,7 @@ if window_option == "Simple Generator":
     userpref = st.text_input("Enter user preference", "history")
 
     if st.button("Generate Story"):
-        with st.spinner("Generating your story....."):
+        with st.spinner("Generating your story..."):
             progress_bar = st.progress(0)
 
             # Preparing the request
@@ -37,7 +48,7 @@ if window_option == "Simple Generator":
             progress_bar.progress(30)
 
             # Sending the request to the server
-            response = requests.post("http://127.0.0.1:8000/generate_story", json=payload)
+            response = requests.post(f"{API_URL_BASE}/generate_story", json=payload)
             progress_bar.progress(50)
 
             # Processing the response
@@ -83,7 +94,7 @@ elif window_option == "Advanced Generator":
         characters.append({"name": char_name, "profession": char_profession})
 
     if st.button("Generate Story"):
-        with st.spinner("Generating your story....."):
+        with st.spinner("Generating your story..."):
             progress_bar = st.progress(0)
 
             # Preparing the request
@@ -100,7 +111,7 @@ elif window_option == "Advanced Generator":
             progress_bar.progress(30)
 
             # Sending the request to the server
-            response = requests.post("http://127.0.0.1:8000/generate_enhanced_story", json=payload)
+            response = requests.post(f"{API_URL_BASE}/generate_enhanced_story", json=payload)
             progress_bar.progress(50)
 
             # Processing the response
@@ -124,7 +135,7 @@ elif window_option == "Create My Own Prompt":
     custom_prompt = st.text_area("Enter your custom prompt", "Generate a story that evokes a happy emotion. The story should feature a prince, a frog, and trees. Additionally, incorporate elements of history to enhance the narrative. Ensure the history aspects are seamlessly integrated and contribute to the overall happy tone of the story.")
 
     if st.button("Generate Story"):
-        with st.spinner("Generating your story....."):
+        with st.spinner("Generating your story..."):
             progress_bar = st.progress(0)
 
             # Preparing the request
@@ -133,7 +144,7 @@ elif window_option == "Create My Own Prompt":
             progress_bar.progress(30)
 
             # Sending the request to the server
-            response = requests.post("http://127.0.0.1:8000/generate_custom_story", json=payload)
+            response = requests.post(f"{API_URL_BASE}/generate_custom_story", json=payload)
             progress_bar.progress(50)
 
             # Processing the response
@@ -149,3 +160,24 @@ elif window_option == "Create My Own Prompt":
 
             # Reset progress bar for the next run
             progress_bar.empty()
+
+elif window_option == "Generate Story Images":
+    st.header("Generate Story Images")
+    story = st.text_area("Enter your story here:", height=200)
+
+    if st.button("Generate"):
+        if story:
+            with st.spinner("Sending request to server..."):
+                response = requests.post("https://4306-34-127-86-94.ngrok-free.app/generate", data={'story': story})
+                if response.status_code == 200:
+                    with st.spinner("Generating images and PDF..."):
+                        response_data = response.json()
+                        pdf_content = base64.b64decode(response_data['pdf'])
+
+                        pdf_filename = "generated_story.pdf"
+                        pdf_download_link = generate_download_link(pdf_content, pdf_filename, "application/pdf")
+                        st.markdown(pdf_download_link, unsafe_allow_html=True)
+                else:
+                    st.error(f"Error generating images: {response.status_code} - {response.text}")
+        else:
+            st.error("Please enter a story.")
