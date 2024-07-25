@@ -22,7 +22,7 @@ Dataset after custom creation :
 For Generating images for storytelling we need a high power GPU
 
 1. go to the notebook : https://github.com/siva1999/llm/blob/main/storytelling/text_to_image.ipynb , run it in google collab under a GPU. this will run a fastAPI service.
-2. the notebook will give a ngork public ip , paste it in : https://github.com/siva1999/llm/blob/main/app/streamlit.py  (line no : 136)
+2. the notebook will give a ngork public ip , paste it in : https://github.com/siva1999/llm/blob/main/app/streamlit_with_image.py  (line no : 171)
 3. run the fast API 
 4. run the streamlit
 
