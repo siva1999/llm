@@ -35,6 +35,7 @@ Advanced Generator : https://github.com/siva1999/llm/blob/main/app/streamlit_out
 
 Custom Prompt Generator : https://github.com/siva1999/llm/blob/main/app/streamlit_output_own_prompt.pdf
 
+Generated images with story : https://github.com/siva1999/llm/blob/main/app/generated_story_with%20image.pdf
 
 ## Results
 
